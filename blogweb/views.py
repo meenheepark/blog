@@ -20,8 +20,8 @@ def new(request):
 
 def create(request):
     post = Post()
-    post.title = request.GET['title']
-    post.body = request.GET['body']
+    post.title = request.POST['title']
+    post.body = request.POST['body']
 
     post,pic = request.FILES['pic']
 
