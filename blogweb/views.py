@@ -22,6 +22,9 @@ def create(request):
     post = Post()
     post.title = request.GET['title']
     post.body = request.GET['body']
+
+    post,pic = request.FILES['pic']
+
     post.pub_date = timezone.datetime.now()
     post.save()
     return redirect('/post/' + str(post.id))
